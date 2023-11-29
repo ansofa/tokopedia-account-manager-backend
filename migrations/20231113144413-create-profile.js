@@ -10,6 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       bearer: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       owner_id: {
