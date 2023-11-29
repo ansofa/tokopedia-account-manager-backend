@@ -1,17 +1,24 @@
 {
   "development": {
-    "username": "ams",
-    "password": "596298",
-    "database": "db_tokopedia_account_manager",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "username": "default",
+    "password": "e2jxKcQN7YzA",
+    "database": "verceldb",
+    "host": "ep-white-mode-95882545-pooler.ap-southeast-1.postgres.vercel-storage.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true, 
+        "rejectUnauthorized": false
+      },
+      "sslmode": "require"
+    }
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
+    "username": "postgres",
+    "password": "postgres",
+    "database": "db_testing_tokopedia_account_manager",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "production": {
     "username": "root",
