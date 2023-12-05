@@ -6,7 +6,7 @@ const userController = new UserController();
 const auth = express.Router();
 
 auth.get("/user", verifyToken, userController.getUser);
-auth.post("/users", userController.registration);
+auth.post("/register", userController.registration);
 auth.post("/login", userController.login);
 auth.get("/token", userController.refreshToken);
 auth.delete("/logout", userController.logout);
