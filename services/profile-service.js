@@ -72,7 +72,6 @@ class TokopediaService {
         url: "https://gql.tokopedia.com/graphql/UserProfileQuery",
         headers: {
           "Host": "gql.tokopedia.com",
-          "Accounts-Authorization": "Bearer " + bearer,
           "User-Agent":
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0",
           "Accept": "*/*",
@@ -86,6 +85,7 @@ class TokopediaService {
           "Origin": "https://www.tokopedia.com",
           "Content-Length": "1700",
           "Te": "trailers",
+          "Cookie": bearer,
         },
         timeout: 3000,
         data: data,
@@ -97,8 +97,9 @@ class TokopediaService {
       if (!isLoggedIn) {
         throw new Error("Bearer tidak valid.");
       }
-      const tokopediaDTO = new TokopediaDTO(json[0]);
-      const mappedData = tokopediaDTO.mappingProfileData();
+
+      const tokopediaDTO = new TokopediaDTO();
+      const mappedData = tokopediaDTO.mappingProfileData(json[0]);
       return mappedData;
     } catch (error) {
       throw error;

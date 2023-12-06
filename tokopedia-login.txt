@@ -1,0 +1,84 @@
+POST /graphql/loginregister/registercheck HTTP/2
+Host: gql.tokopedia.com
+User-Agent: Tokopedia/2.248.0 (com.tokopedia.Tokopedia; build:202310261718; iOS 17.1.0) Alamofire/2.248.0
+Accounts-Authorization: Bearer
+X-Device: ios-2.248.0
+X-Tkpd-Akamai: rgsc
+X-Method: POST
+Content-Length: 401
+X-App-Version: 2.248.0
+Accept-Language: id;q=1.0, en;q=0.9
+Request-Method: POST
+Accept: application/json
+Accept-Encoding: gzip
+Content-Type: application/json
+
+[
+  {
+    "query": "mutation register_check ($id: String!){\n    registerCheck(id: $id) {\n        isExist\n        isPending\n        status\n        registerType\n        userID\n        view\n        errors\n        uh\n        registerOvoEnable\n    }\n}",
+    "variables": {
+      "id": "085733801582"
+    },
+    "operationName": null,
+    "md5": "b7066a80c9069bee7f224acdc239e0ae"
+  }
+]
+
+POST /graphql/otp/otpmodelist HTTP/2
+Host: gql.tokopedia.com
+User-Agent: Tokopedia/2.248.0 (com.tokopedia.Tokopedia; build:202310261718; iOS 17.1.0) Alamofire/2.248.0
+Accounts-Authorization: Bearer
+X-Device: ios-2.248.0
+X-Method: POST
+Content-Length: 1158
+X-App-Version: 2.248.0
+Accept-Language: id;q=1.0, en;q=0.9
+Request-Method: POST
+Accept: application/json
+Accept-Encoding: gzip
+Content-Type: application/json
+
+[
+  {
+    "query": "query otp_mode_list($otpType: String!, $userId: String, $msisdn: String, $email: String, $Timeunix: String, $AuthenticitySignature: String){\n    OTPModeList(otpType: $otpType, userID: $userId, msisdn: $msisdn, email:  $email, Timeunix: $Timeunix, AuthenticitySignature: $AuthenticitySignature) {\n        success\n        message\n        errorMessage\n        otpDigit\n        linkType\n        enableTicker\n        tickerTrouble\n        defaultMode\n        defaultBehaviorMode\n        switchAlternativeMethodTime\n        modeLists {\n            modeCode\n            modeText\n            otpListText\n            afterOtpListText\n            afterOtpListTextHtml\n            otpListImgUrl\n            usingPopUp\n            popUpHeader\n            popUpBody\n            countdown\n            directRequest\n            otpDigit\n        }\n    }\n}",
+    "variables": {
+      "otpType": "112",
+      "userId": "",
+      "msisdn": "628567446106",
+      "email": "",
+      "Timeunix": "",
+      "AuthenticitySignature": ""
+    },
+    "operationName": null,
+    "md5": "c59f9c992f642bab18253eac5766983a"
+  }
+]
+
+POST /graphql/otp/otprequest HTTP/2
+Host: gql.tokopedia.com
+User-Agent: Tokopedia/2.248.0 (com.tokopedia.Tokopedia; build:202310261718; iOS 17.1.0) Alamofire/2.248.0
+Accounts-Authorization: Bearer
+X-Device: ios-2.248.0
+X-Method: POST
+Content-Length: 653
+X-App-Version: 2.248.0
+Accept-Language: id;q=1.0, en;q=0.9
+Request-Method: POST
+Accept: application/json
+Accept-Encoding: gzip
+Content-Type: application/json
+
+[
+  {
+    "query": "query otp_request($otpType: String!, $mode: String, $msisdn: String, $email: String, $otpDigit: Int){\n    OTPRequest(otpType: $otpType, mode: $mode, msisdn: $msisdn, email: $email, otpDigit: $otpDigit) {\n        success\n        message\n        errorMessage\n        prefixMisscall\n        message_title\n        message_sub_title\n        message_img_link\n        error_code\n    }\n}",
+    "variables": {
+      "otpType": "112",
+      "mode": "whatsapp",
+      "msisdn": "085733801582",
+      "email": "",
+      "otpDigit": 6
+    },
+    "operationName": null,
+    "md5": "70ed5661683d28aa1297091087d1b698"
+  }
+]
