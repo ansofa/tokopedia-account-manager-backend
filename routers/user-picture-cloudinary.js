@@ -1,24 +1,10 @@
-const express = require('express');
-const uploader = require('../middlewares/uploader-image');
-const uploadCloudinary = require('../libs/upload-cloudinary');
+const express = require("express");
+const verifyUpload = require("../middlewares/verivy-upload");
+const UserPictureController = require("../controllers/user-picture-controller");
+const verifyToken = require("../middlewares/verify-token");
+const userPictureController = new UserPictureController();
 const upload = express.Router()
 
-upload.post('/setting', uploader.single('file'), async (req, res) => {
-    const { url } = await uploadCloudinary(req.file.path);
-
-    if (url) {
-        res.status(200).json({
-            status: "SUCCESS",
-            message: "Upload Berhasil",
-            url: url
-        })
-    } else {
-        res.status(400).json({
-            message: "Upload Berhasil",
-            url: null
-        })
-    }
-})
-
+upload.post("/cloudinary", verifyToken ,verifyUpload, userPictureController.storeProfilePicture)
 
 module.exports = upload;

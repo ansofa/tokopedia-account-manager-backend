@@ -132,7 +132,7 @@ class UserService {
         where: {
           id: userId,
         },
-        attributes: ["id", "username", "email"],
+        attributes: ["id", "username", "email", "image"],
       });
       return user;
     } catch (error) {

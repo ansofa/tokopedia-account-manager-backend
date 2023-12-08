@@ -74,7 +74,6 @@ class UserController {
       res.status(statusCode).json({ status: "FAILED", message: error.message });
     }
   }
-
 }
 
 module.exports = UserController;
