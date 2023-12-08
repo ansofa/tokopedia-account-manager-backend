@@ -16,7 +16,7 @@ class TokopediaDTO {
     const newDataTransaction = dataTransaction.map(transaction => ({
       orderUUID: transaction.orderUUID,
       productName: transaction.metadata.products[0].title,
-      status: transaction.metadata.status.label,
+      status: { label: transaction.metadata.status.label, textColor: transaction.metadata.status.textColor },
       transactionDate: transaction.metadata.paymentDateStr,
       totalPrice: transaction.metadata.totalPrice.value
     }));
