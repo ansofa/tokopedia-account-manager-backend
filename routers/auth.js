@@ -129,6 +129,10 @@ auth.post("/users", userController.registration);
  *                                  type: string
  *                                  description: Response Message
  *                                  example: Login Berhasil
+ *                              accessToken:
+ *                                  type: string
+ *                                  description: Response Token
+ *                                  example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJuYW1lIjoiZmFycmFzbWYiLCJlbWFpbCI6ImZhcnJhc211aGFtbWFkZnVycW9uQGdtYWlsLmNvbSIsImlhdCI6MTcwMTg1MDg5OSwiZXhwIjoxNzAxOTM3Mjk5fQ.aIk9Nfm386YQEGRoeiguvj81ZU1-Qp12_wXxYf9bX6E
  *          400:
  *              description: Login Failed
  *              content:
@@ -158,7 +162,7 @@ auth.post("/users", userController.registration);
  *                              message:
  *                                  type: string
  *                                  description: Response Message
- *                                  example: Email tidak terdaftar                              
+ *                                  example: Email tidak terdaftar                         
  */
 auth.post("/login", userController.login);
 
