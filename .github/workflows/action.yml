@@ -44,7 +44,7 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.VPS_HOST }}
-        username: root
+        username: azureuser
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           cd ${{ secrets.VPS_FOLDER }}
