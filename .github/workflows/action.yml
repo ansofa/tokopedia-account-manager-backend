@@ -49,8 +49,6 @@ jobs:
         script: |
           cd ${{ secrets.VPS_FOLDER }}
           git pull origin main
-          export NVM_DIR=~/.nvm
-          source ~/.nvm/nvm.sh
           npm install
           sudo pm2 delete tkpd-backend
           sudo pm2 start app.js --name tkpd-backend
