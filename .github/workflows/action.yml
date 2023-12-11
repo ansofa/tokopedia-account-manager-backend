@@ -37,7 +37,7 @@ jobs:
         path: ./*
         remote_path: "${{ secrets.VPS_FOLDER }}"
         remote_host: "${{ secrets.VPS_HOST }}"
-        remote_user: azureuser
+        remote_user: root
         remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
 
     - name: SSH into VPS and run commands
