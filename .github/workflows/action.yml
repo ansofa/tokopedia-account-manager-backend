@@ -48,7 +48,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           cd ${{ secrets.VPS_FOLDER }}
-          git pull origin main
+          git pull
           npm install
           pm2 delete tkpd-backend
           pm2 start app.js --name tkpd-backend
