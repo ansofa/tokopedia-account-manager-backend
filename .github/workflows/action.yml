@@ -50,5 +50,5 @@ jobs:
           cd ${{ secrets.VPS_FOLDER }}
           git pull origin main
           npm install
-          sudo pm2 delete tkpd-backend
-          sudo pm2 start app.js --name tkpd-backend
+          pm2 delete tkpd-backend
+          pm2 start app.js --name tkpd-backend
